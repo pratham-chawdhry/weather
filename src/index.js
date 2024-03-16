@@ -10,13 +10,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/weather">
       <Routes>
         <Route path="/Menu/:id" element={<App />} />
         <Route path="/LearnMore/:lat/:lon" element={<LearnMore />} />
         <Route path="/" element={<Home />} />
         <Route path="/LearnMore/1/:city" element={<LearnMoreCity />} />
         <Route path="/LearnMore/Address/Type_2/:city/:countryCode" element={<LearnMoreCity />} />
+        {/* Add more routes as needed */}
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
