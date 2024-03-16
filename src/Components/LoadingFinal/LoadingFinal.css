@@ -1,0 +1,71 @@
+.Weather-Dashboard{
+    background-image: linear-gradient(60deg, #180132 0%, #521aa0 25%, #5e33cc 50%, #5821a6 75%, #b589e6 100%);
+    height: 700px;
+    width: 600px;
+    border-radius: 10px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    color : white;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-day{
+    background-image: linear-gradient(60deg, rgb(0, 98, 255) 0%, rgb(0, 157, 255) 25%,  rgb(0, 208, 255) 50%, rgb(0, 157, 255) 75%, rgb(0, 255, 170) 100%);
+}
+
+.weather-night{
+    background-image: linear-gradient(60deg, #180132 0%, #521aa0 25%, #5e33cc 50%, #5821a6 75%, #b589e6 100%);
+}
+
+.cityName{
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;;
+    margin-left: -15px;
+}
+
+.weather-icon {
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+    grid-area: weather-icon;
+    height: 200px;
+    width: 200px;
+    margin-right: 20px;
+}
+.temp {
+    padding-right : 10px;
+    grid-area: temp;
+    font-size: 100px;
+    color : white;
+    border-right: 2px solid white;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+.temp-min {
+    margin-left: 15px;
+    grid-area: temp-min;
+    font-size: 30px;
+    color : white;
+    justify-content: right;
+    align-items: center;
+}
+.temp-max {
+    margin-left: 15px;
+    grid-area: temp-max;
+    font-size: 30px;
+    color : white;
+}
+
+.Grid-container{
+    align-items: center;
+    display: grid;
+    place-content: center;
+    grid-template-areas: 
+    'weather-icon temp temp-max weather-icon' 
+    'weather-icon temp temp-min weather-icon';
+}

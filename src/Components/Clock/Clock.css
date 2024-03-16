@@ -1,0 +1,41 @@
+.Digital-Clock{
+    font-size: 20px;
+    border-radius: 175px;
+    height: 350px;
+    width: 350px;
+    border: 2px solid black;
+    position: relative
+}
+
+.Digital-Clock-Second{
+    border: 1px solid red;
+    transform-origin: left;
+    margin-left: 175px;
+    margin-top: 175px;
+    height: 0px;
+    width: 150px;
+    z-index: 2;
+    position: absolute;
+}
+
+.Digital-Clock-Minute{
+    border: 1px solid gray;
+    height: 0px;
+    width: 120px;
+    margin-left: 175px;
+    margin-top: 175px;
+    z-index: 1;
+    position: absolute;
+    transform-origin: left;
+}
+
+.Digital-Clock-Hour{
+    border: 1px solid black;
+    height: 0px;
+    width: 85px;
+    margin-left: 175px;
+    margin-top: 175px;
+    z-index: 0;
+    position: absolute;
+    transform-origin: left;
+}

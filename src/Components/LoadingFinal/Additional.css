@@ -1,0 +1,16 @@
+.Flex-Container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.Flex-Container-new{
+    display: flex;
+    margin-right: 20px;
+    margin-left : 20px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

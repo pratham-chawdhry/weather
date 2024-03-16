@@ -1,0 +1,51 @@
+.loaded-container{
+    color: black;
+    font-size: 40px;
+}
+
+.Sunset-Sunrise{
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    font-size: 24px;
+}
+
+.weather-icon {
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+    grid-area: weather-icon;
+}
+.temp {
+    padding-right : 10px;
+    grid-area: temp;
+    font-size: 100px;
+    color : white;
+    border-right: 2px solid white;
+    justify-content: center;
+    align-items: center;
+}
+.temp-min {
+    margin-left: 10px;
+    grid-area: temp-min;
+    font-size: 30px;
+    color : white;
+    justify-content: right;
+    align-items: center;
+}
+.temp-max {
+    margin-left: 10px;
+    grid-area: temp-max;
+    font-size: 30px;
+    color : white;
+}
+
+.Grid-container{
+    align-items: center;
+    display: grid;
+    place-content: center;
+    grid-template-areas: 
+    'weather-icon temp temp-max' 
+    'weather-icon temp temp-min';
+}
+
