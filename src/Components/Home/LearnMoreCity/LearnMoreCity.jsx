@@ -17,9 +17,9 @@ export const UserLongitudeContext = createContext();
 export default function LearnMoreCity() {
     const path = window.location.pathname;
     const substrings = path.split('/');
-    const [address, setAddress] = useState(substrings[4]);
-    const [countryCode, setCountryCode] = useState(substrings[5]);
-    const [city, setCity] = useState(substrings[4]);
+    const [address, setAddress] = useState(substrings[5]);
+    const [countryCode, setCountryCode] = useState(substrings[6]);
+    const [city, setCity] = useState(substrings[5]);
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [latitude, setLatitude] = useState(51.5085);

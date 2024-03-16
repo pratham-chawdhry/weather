@@ -8,8 +8,8 @@ export default function LearnMore() {
     const path = window.location.pathname;
 
     const substrings = path.split('/');
-    const [latitude, setLatitude] = useState(substrings[2]);
-    const [longitude, setLongitude] = useState(substrings[3]);
+    const [latitude, setLatitude] = useState(substrings[3]);
+    const [longitude, setLongitude] = useState(substrings[4]);
     const [isLoading, setIsLoading] = useState(true);
 
   return (
