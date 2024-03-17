@@ -14,8 +14,10 @@ export default function LearnMore() {
 
   return (
     <div>
+        <div style = {{transform: 'scale(0.9)', transformOrigin: 'top left'}}>
         <Menu latitude = {latitude} longitude = {longitude} setLatitude = {setLatitude} setLongitude = {setLongitude}/>
-        <div style = {{display: 'flex', justifyContent: 'center'}}>
+        </div>
+        <div style = {{display: 'flex', justifyContent: 'center', transform: 'scale(0.9)', transformOrigin: 'top center'}}>
             <div>
                 <CityMap latitude = {latitude} longitude = {longitude} setLatitude = {setLatitude} setLongitude = {setLongitude} setIsLoading = {setIsLoading}/>
             </div>

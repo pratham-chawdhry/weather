@@ -15,16 +15,16 @@
   font-family: 'Roboto', sans-serif;
   display: grid;
   color : white;
-  max-width: 1040px;
-  gap: 12px;
-  padding: 20px;
+  max-width: 1000px;
+  gap: 10.8px;
+  padding: 18px;
   align-items: center;
   justify-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   background-size: 100% 100%;
   animation: gradient 30s ease infinite;
-  border-radius: 20px;
-  height: 800px;
+  border-radius: 18px;
+  height: 720px;
 }
 
 .Final{

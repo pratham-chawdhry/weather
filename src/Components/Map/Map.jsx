@@ -44,10 +44,10 @@ const LeafletMap = ({ array, setArray, newArray, setNewArray, latitudeOriginal, 
   }, [latitudeOriginal, longitudeOriginal, setArray]);
 
   return (
-    <div style = {{display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom : '50px'}}>
+    <div style = {{display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom : '45px'}}>
       <div style = {{alignItems: 'center', justifyContent: 'center', display: 'flex', textAlign: 'center', flexDirection: 'column'}}>
-          <div style = {{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', backgroundColor : 'white', borderRadius : '20px', height : '100vh'}}>
-            <div id="map" style={{ width: '600px', height: '800px', paddingLeft : '15px', marginLeft : '15px', borderRadius : '20px'}}></div>
+          <div style = {{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', backgroundColor : 'white', borderRadius : '18px', height : '100vh'}}>
+            <div id="map" style={{ width: '540px', height: '720px', paddingLeft : '13.5px', marginLeft : '13.5px', borderRadius : '18px'}}></div>
             <div style = {{display: 'flex', justifyContent: 'center ', alignItems: 'center', marginTop : '10px'}}>
               <div>
                 <label htmlFor="latitude" style={{backgroundColor: "black", color: "white", padding: "5px", borderRadius: "5px", marginBottom: "5px", fontSize : '18px'}}>Latitude:</label>

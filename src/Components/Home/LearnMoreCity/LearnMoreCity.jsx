@@ -60,8 +60,10 @@ export default function LearnMoreCity() {
     return (
         <div>
             <New/>
+            <div style={{transform: 'scale(0.9)', transformOrigin: 'top left'}}>
             <Menu address={address} countryCode={countryCode} setAddress={setAddress} setCountryCode={setCountryCode} latitude={latitude} longitude={longitude} setLatitude={setLatitude} setLongitude={setLongitude} setIsLoading={setIsLoading} setFinish={setFinish}/>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+            </div>
+        <div style={{ display: 'flex', justifyContent: 'center', transform: 'scale(0.9)', transformOrigin: 'top'}}>
             <div>
                 <UserCityContext.Provider value={city}>
                     <UserCountryContext.Provider value={countryCode}>

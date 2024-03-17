@@ -1,17 +1,17 @@
-import React from 'react'
+import React from 'react';
 import { useState, useEffect } from 'react';
 import Weather from './weatherOne';
 
 const API_key = 'f970789f0b97c5c02aa8bd273bd3a60a';
 const API_endpoint = 'https://api.openweathermap.org/data/2.5/weather?q=';
 
-export default function WeatherTwo({name, display,setCurrentLatitudeLongitude, setLatitudeOriginal, setLongitudeOriginal, countryCode, index}) {
+export default function WeatherTwo({ name, display, setCurrentLatitudeLongitude, setLatitudeOriginal, setLongitudeOriginal, countryCode, index }) {
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
     const [latitude, setLatitude] = useState(51.5085);
     const [longitude, setLongitude] = useState(-0.1257);
-    const [finish , setFinish] = useState(false)
+    const [finish, setFinish] = useState(false);
 
     const url = `${API_endpoint}${name},${countryCode}&appid=${API_key}`;
 
@@ -39,14 +39,21 @@ export default function WeatherTwo({name, display,setCurrentLatitudeLongitude, s
                 const { lon, lat } = coord;
                 setLatitude(lat);
                 setLongitude(lon);
-                setFinish(true)
+                setFinish(true);
             }
         }
     }, [data, isLoading]);
 
-  return (
-    <div>
-        {finish ? <Weather data={data} setData={setData} latitude={latitude} longitude={longitude} onClick={() => {setCurrentLatitudeLongitude([latitude, longitude]); setLatitudeOriginal(latitude); setLongitudeOriginal(longitude);}} index = {index}/> : <div>Loading...</div>}
-    </div>
-  )
+    return (
+        <div>
+            {finish ? <Weather data={data} setData={setData} latitude={latitude} longitude={longitude} onClick={() => { setCurrentLatitudeLongitude([latitude, longitude]); setLatitudeOriginal(latitude); setLongitudeOriginal(longitude); }} index={index} /> :
+                <div style={{ width: '36px', height: '36px', borderRadius: '45%', border: '4px solid #f3f3f3', borderTop: '4px solid #3498db', animation: 'spin 1s linear infinite' }}></div>}
+            <style>
+                {`@keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }`}
+            </style>
+        </div>
+    )
 }

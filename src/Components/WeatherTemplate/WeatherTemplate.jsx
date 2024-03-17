@@ -82,52 +82,52 @@ function App() {
   console.log(change)
 
   return (
-    <div >
-      <Menu array={array} setArray={setArray}/>
-    <div className="Final" style = {{fontFamily : 'Garamond', paddingTop: '0px', marginTop: '20px'}}>
-      <div style={{position : 'relative',paddingTop: '0px'}}>
-      <div className="App Additional Home" style = {{backgroundImage : `url(${require(`../../images/Pic.webp`)})`, position : 'absolute', zIndex : '0', fontFamily : 'Garamond'}}></div>
-        <div className='App Additional ' style={{position : 'relative', zIndex : '1', fontFamily : 'Garamond'}}>
-          {(currentPage === '1') && (
-            <UserLatitudeContext.Provider value={latitudeOriginalPosition}>
-              <UserLongitudeContext.Provider value={longitudeOriginalPosition}>
-                  <Weather latitude={latitudeOriginalPosition} longitude={longitudeOriginalPosition} onClick={() => { setCurrentLatitudeLongitude({ latitudeOriginalPosition, longitudeOriginalPosition }); setLatitudeOriginal(latitudeOriginalPosition); setLongitudeOriginal(longitudeOriginalPosition);}} display = {true} index = {-1} />
-              </UserLongitudeContext.Provider>
-            </UserLatitudeContext.Provider>)}
-          {/* Wrap the Weather components with UserLaContext.Provider for each latitude */}
-          {newArray.map(({ latitude, longitude, display, name, countryCode }, index) => (
-              display && (index <= currentPage * 4 - 2) && (index >= currentPage * 4 - 5) && (
-                  (name === "null" && countryCode === "null")  ? (
-                              <div key={index}>
-                                  <Weather key={index} latitude={latitude} longitude={longitude}
-                                      onClick={() => {
-                                          setCurrentLatitudeLongitude({ latitude, longitude });
-                                          setLatitudeOriginal(latitude);
-                                          setLongitudeOriginal(longitude);
-                                      }}
-                                      index={index}/>
-                              </div>
-                      
-                  ) : (
-                      <WeatherTwo name = {name} key={index} display = {display} setCurrentLatitudeLongitude = {setCurrentLatitudeLongitude} setLatitudeOriginal = {setLatitudeOriginal} setLongitudeOriginal = {setLongitudeOriginal} countryCode = {countryCode} latitude = {latitude} longitude = {longitude} index = {index}/>
-                  )
-              )
-          ))}
+      <div>
+          <Menu array={array} setArray={setArray} />
+          <div className="Final" style={{ fontFamily: 'Garamond', paddingTop: '0px', marginTop: '18px' }}>
+              <div style={{ position: 'relative', paddingTop: '0px' }}>
+                  <div className="App Additional Home" style={{ backgroundImage: `url(${require(`../../images/Pic.webp`)})`, position: 'absolute', zIndex: '0', fontFamily: 'Garamond' }}></div>
+                  <div className='App Additional' style={{ position: 'relative', zIndex: '1', fontFamily: 'Garamond' }}>
+                      {(currentPage === '1') && (
+                          <UserLatitudeContext.Provider value={latitudeOriginalPosition}>
+                              <UserLongitudeContext.Provider value={longitudeOriginalPosition}>
+                                  <Weather latitude={latitudeOriginalPosition} longitude={longitudeOriginalPosition} onClick={() => { setCurrentLatitudeLongitude({ latitudeOriginalPosition, longitudeOriginalPosition }); setLatitudeOriginal(latitudeOriginalPosition); setLongitudeOriginal(longitudeOriginalPosition); }} display={true} index={-1} />
+                              </UserLongitudeContext.Provider>
+                          </UserLatitudeContext.Provider>)}
+                      {/* Wrap the Weather components with UserLaContext.Provider for each latitude */}
+                      {newArray.map(({ latitude, longitude, display, name, countryCode }, index) => (
+                          display && (index <= currentPage * 4 - 2) && (index >= currentPage * 4 - 5) && (
+                              (name === "null" && countryCode === "null") ? (
+                                  <div key={index}>
+                                      <Weather key={index} latitude={latitude} longitude={longitude}
+                                          onClick={() => {
+                                              setCurrentLatitudeLongitude({ latitude, longitude });
+                                              setLatitudeOriginal(latitude);
+                                              setLongitudeOriginal(longitude);
+                                          }}
+                                          index={index} />
+                                  </div>
+
+                              ) : (
+                                  <WeatherTwo name={name} key={index} display={display} setCurrentLatitudeLongitude={setCurrentLatitudeLongitude} setLatitudeOriginal={setLatitudeOriginal} setLongitudeOriginal={setLongitudeOriginal} countryCode={countryCode} latitude={latitude} longitude={longitude} index={index} />
+                              )
+                          )
+                      ))}
+                  </div>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+                  <Map array={array} setArray={setArray} newArray={newArray} setNewArray={setNewArray} latitudeOriginal={latitudeOriginal} longitudeOriginal={longitudeOriginal} setLatitudeOriginal={setLatitudeOriginal} setLongitudeOriginal={setLongitudeOriginal} setCurrentLatitudeLongitude={setCurrentLatitudeLongitude} latitudeOriginalPosition={latitudeOriginalPosition} longitudeOriginalPosition={longitudeOriginalPosition} count={count} setCount={setCount} />
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '450px', gap: '9px' }}>
+                      <Link to="/Menu/1" onClick={() => setCurrentPage('1')} style={{ backgroundColor: "black", color: "white", padding: "4.5px", borderRadius: "90px", marginBottom: "4.5px", height: "31.5px", fontSize: "13.5px", textAlign: "center", paddingTop: "7.2px", width: "31.5px", textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '18px' }}>1</Link>
+                      {newArray.map(({ latitude, longitude, display }, index) => (
+                          display && (index % 4 === 3) && (
+                              <Link to={`/Menu/${Math.floor(index / 4 + 0.25) + 1}`} key={`page-${Math.floor(index / 4 + 0.25) + 1}`} onClick={() => setCurrentPage(Math.floor(index / 4 + 0.25) + 1)} style={{ backgroundColor: "black", color: "white", padding: "4.5px", borderRadius: "90px", marginBottom: "4.5px", height: "31.5px", fontSize: "13.5px", textAlign: "center", paddingTop: "7.2px", width: "31.5px", textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '18px' }}> {Math.floor(index / 4 + 0.25) + 1}</Link>
+                          )
+                      ))}
+                  </div>
+              </div>
           </div>
-        </div>
-    <div style = {{display : 'flex', justifyContent : 'center', alignItems : 'center', flexDirection : 'column'}}>
-    <Map array = {array} setArray = {setArray} newArray = {newArray} setNewArray = {setNewArray} latitudeOriginal = {latitudeOriginal} longitudeOriginal = {longitudeOriginal} setLatitudeOriginal = {setLatitudeOriginal} setLongitudeOriginal = {setLongitudeOriginal} setCurrentLatitudeLongitude = {setCurrentLatitudeLongitude} latitudeOriginalPosition={latitudeOriginalPosition} longitudeOriginalPosition={longitudeOriginalPosition} count = {count} setCount = {setCount}/>
-      <div style = {{display : 'flex', justifyContent : 'center', alignItems : 'center', width : '500px', gap : '10px'}}>  
-        <Link to = "/Menu/1" onClick={() => setCurrentPage('1')} style={{ backgroundColor: "black", color: "white", padding: "5px", borderRadius: "100px", marginBottom: "5px", height: "35px", fontSize : "15px", textAlign: "center", paddingTop : "8px", width : "35px", textDecoration : 'none', display : 'flex', justifyContent : 'center', alignItems : 'center', fontSize: '20px'}}>1</Link>
-        {newArray.map(({ latitude, longitude, display }, index) => (
-            display && (index % 4 === 3) &&(
-            <Link to = {`/Menu/${Math.floor(index/4 + 0.25) + 1}`} key={`page-${Math.floor(index/4 + 0.25) + 1}`} onClick={() => setCurrentPage(Math.floor(index/4 + 0.25) + 1)}style={{ backgroundColor: "black", color: "white", padding: "5px", borderRadius: "100px", marginBottom: "5px", height: "35px", fontSize : "15px", textAlign: "center", paddingTop : "8px", width : "35px", textDecoration : 'none', display : 'flex', justifyContent : 'center', alignItems : 'center', fontSize: '20px'}}> {Math.floor(index/4 + 0.25) + 1}</Link>
-          ))
-        )}
       </div>
-    </div>
-    </div>
-    </div>
   );
 }
 

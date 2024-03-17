@@ -34,9 +34,12 @@ export default function Time({timezone, day, setDay, sunrise, sunset}) {
     const userLongitudeContext = useContext(UserLongitudeContext);
 
   return (
-  <div style={{ color: 'white', display: 'flex', justifyContent: 'center', gap : '50px', alignItems: 'center', marginTop: '20px', fontSize: '35px' }}>
+  <div style={{ color: 'white', display: 'flex', justifyContent: 'center', gap : '45px', alignItems: 'center', marginTop: '18px', fontSize: '31.5px' }}>
     <div>{new Date(date / 1000 + timeLag).toLocaleTimeString()}</div>
-    <Link to={`/LearnMore/${userLatitudeContext}/${userLongitudeContext}`} className={`weather${day}`} style={{ textDecoration: 'none', height: '35px', fontSize: '20px', width: '120px', fontFamily: 'Garamond', borderRadius: '5px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Learn More</Link>
+    <div style={{display : 'flex', justifyContent : 'center', alignItems : 'center', fontFamily: 'cursive'}}>
+    <Link to={`/LearnMore/${userLatitudeContext}/${userLongitudeContext}`} className={`weather${day}`} style={{ textDecoration: 'none', height: '31.5px', fontSize: '18px', width: '108px', fontFamily: 'Garamond', borderRadius: '4.5px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Learn More</Link>
+    <button style={{ textDecoration: 'none', height: '31.5px', fontSize: '18px', width: '108px', fontFamily: 'Garamond', borderRadius: '4.5px', display: 'flex', justifyContent: 'center', alignItems: 'center', border: 'none', backgroundColor: '#fc3e28', color: 'white'}}>Remove</button>
+    </div>
   </div>
   )
 }

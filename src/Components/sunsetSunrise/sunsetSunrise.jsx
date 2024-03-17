@@ -13,17 +13,17 @@ export default function SunsetSunrise({ sys, timezone, day, setDay}) {
     <>
     <div className='Sunset-Sunrise'>
     <div>
-        <img src = {require(`../../images/Sunrise.png`)} style = {{width: '100px', height: '100px'}}/>
+        <img src = {require(`../../images/Sunrise.png`)} style = {{width: '90px', height: '90px'}}/>
     </div>
     <div>
-        <img src = {require(`../../images/Sunset.png`)} style = {{width: '100px', height: '100px'}}/>
+        <img src = {require(`../../images/Sunset.png`)} style = {{width: '90px', height: '90px'}}/>
     </div>
   </div>
   <div className='Sunset-Sunrise'>
-    <div style = {{fontSize : '20px'}}>
+    <div style = {{fontSize : '18px'}}>
         {sunriseTime.toLocaleTimeString()}
     </div>
-    <div style = {{fontSize : '20px'}}>
+    <div style = {{fontSize : '18px'}}>
         {sunsetTime.toLocaleTimeString()}
     </div>
   </div>

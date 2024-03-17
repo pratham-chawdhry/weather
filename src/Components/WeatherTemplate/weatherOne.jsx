@@ -7,7 +7,7 @@ export default function WeatherOne({data, latitude, longitude, onClick, index, l
 
   return (
     <div>
-    {loading ? (<div style = {{width : '40px', height : '40px', borderRadius: '50%', border : '4px solid #f3f3f3', borderTop : '4px solid #3498db', animation : 'spin 1s linear infinite'}} ></div>) : 
+    {loading ? (<div style = {{width : '36px', height : '36px', borderRadius: '45%', border : '4px solid #f3f3f3', borderTop : '4px solid #3498db', animation : 'spin 1s linear infinite'}} ></div>) : 
     <div className={`weather ${`weather-${day}`}`} style ={{opacity : '0.9'}} onClick = {onClick}>
       {loading ? <div style = {{alignItems: 'center', justifyContent: 'center', display: 'grid'}} onClick = {onClick}><div onClick = {onClick}>latitude : {latitude}</div> <div onClick = {onClick}> longitude : {longitude}</div></div> : 
       <Loaded latitude = {latitude} longitude = {longitude} data={data} setData={setData} day = {day} setDay = {setDay}/>}
