@@ -25,7 +25,9 @@ const LeafletMap = ({ array, setArray, newArray, setNewArray, latitudeOriginal, 
       const object = {
         latitude: e.latlng.lat,
         longitude: e.latlng.lng,
-        display : true
+        display : true,
+        name: 'null',
+        countryCode: 'null'
       };
       setCurrentLatitudeLongitude(object);
       setLatitudeOriginal(object.latitude);
